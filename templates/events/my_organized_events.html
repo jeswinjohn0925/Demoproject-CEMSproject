@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}My Organized Events - CEMS{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2><i class="fas fa-tasks"></i> My Organized Events</h2>
+        {% if events %}
+            <div class="row">
+                {% for event in events %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ event.title }}</h5>
+                            <p class="card-text text-muted">{{ event.description|truncatechars:100 }}</p>
+                            <div class="mb-2">
+                                <i class="fas fa-map-marker-alt"></i> {{ event.location }}
+                            </div>
+                            <div class="mb-2">
+                                <i class="fas fa-calendar"></i> {{ event.date|date:"M d, Y H:i" }}
+                            </div>
+                            <a href="{% url 'event_detail' event.pk %}" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle"></i> You have not organized any events yet.
+                <a href="{% url 'create_event' %}" class="alert-link">Create your first event</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

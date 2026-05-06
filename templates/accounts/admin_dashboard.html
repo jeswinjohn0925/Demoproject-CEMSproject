@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard - CEMS{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h4><i class="fas fa-shield-alt"></i> Admin Dashboard</h4>
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card text-center w-100">
+                            <div class="card-body">
+                                <i class="fas fa-users fa-3x text-primary"></i>
+                                <h5 class="card-title mt-3">User Management</h5>
+                                <p class="card-text">Manage all users and roles</p>
+                                <a href="{% url 'manage_users' %}" class="btn btn-primary">Manage Users</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card text-center w-100">
+                            <div class="card-body">
+                                <i class="fas fa-calendar fa-3x text-success"></i>
+                                <h5 class="card-title mt-3">All Events</h5>
+                                <p class="card-text">View and manage all events</p>
+                                <a href="{% url 'event_list' %}" class="btn btn-success">All Events</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card text-center w-100">
+                            <div class="card-body">
+                                <i class="fas fa-chart-pie fa-3x text-info"></i>
+                                <h5 class="card-title mt-3">System Reports</h5>
+                                <p class="card-text">Generate comprehensive reports</p>
+                                <a href="{% url 'system_reports' %}" class="btn btn-info">Reports</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

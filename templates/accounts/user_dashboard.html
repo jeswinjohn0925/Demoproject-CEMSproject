@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}User Dashboard - CEMS{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h4><i class="fas fa-tachometer-alt"></i> User Dashboard</h4>
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card text-center w-100">
+                            <div class="card-body">
+                                <i class="fas fa-calendar-alt fa-3x text-primary"></i>
+                                <h5 class="card-title mt-3">View Events</h5>
+                                <p class="card-text">Browse and register for upcoming events</p>
+                                <a href="{% url 'event_list' %}" class="btn btn-primary">View Events</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card text-center w-100">
+                            <div class="card-body">
+                                <i class="fas fa-list fa-3x text-success"></i>
+                                <h5 class="card-title mt-3">My Registrations</h5>
+                                <p class="card-text">View events you've registered for</p>
+                                <a href="{% url 'my_events' %}" class="btn btn-success">My Events</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="card text-center w-100">
+                            <div class="card-body">
+                                <i class="fas fa-user-edit fa-3x text-warning"></i>
+                                <h5 class="card-title mt-3">Edit Profile</h5>
+                                <p class="card-text">Update your personal and contact details</p>
+                                <a href="{% url 'edit_profile' %}" class="btn btn-warning">Edit Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
